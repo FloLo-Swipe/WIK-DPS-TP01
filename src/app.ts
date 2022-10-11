@@ -1,6 +1,6 @@
 import express, { application, json } from 'express';
 const app = express();
-const PING_LISTEN_PORT = 3000;
+const port = process.env.PING_LISTEN_PORT;
 
 app.get('/ping', (req, res) => {
 
@@ -15,6 +15,6 @@ app.get('*', (req, res) => {
   ;
 });
 
-app.listen(PING_LISTEN_PORT, () => {
-  return console.log(`Express is listening at http://localhost:${PING_LISTEN_PORT}`);
+app.listen(port, () => {
+  return console.log(`Express is listening at http://localhost:${port}`);
 });
